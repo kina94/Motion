@@ -1,10 +1,8 @@
 import { PageComponent } from "./components/page.js";
 class App {
-  private readonly page: PageComponent;
-  constructor(appRoot: HTMLElement) {
+  constructor(appRoot) {
     this.page = new PageComponent();
     this.page.attachTo(appRoot);
   }
 }
-
-new App(document.querySelector(".document")! as HTMLElement);
+new App(document.querySelector(".document"));
