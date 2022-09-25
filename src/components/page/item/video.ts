@@ -19,7 +19,7 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
     const iframe = this.element.querySelector(
       ".video__iframe"
     )! as HTMLIFrameElement;
-    iframe.src = url;
+    iframe.src = this.convertToEmbeddedURL(url);
   }
 
   private convertToEmbeddedURL(url: string): string {
@@ -28,7 +28,7 @@ export class VideoComponent extends BaseComponent<HTMLElement> {
     const match = url.match(regExp);
     const videoId = match ? match[1] || match[2] : undefined;
     if (videoId) {
-      return `https://www.yotube.com/embed/${videoId}`;
+      return `https://www.youtube.com/embed/${videoId}`;
     }
     return url;
   }

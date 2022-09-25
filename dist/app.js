@@ -10,11 +10,11 @@ class App {
         const image = new ImageComponent("new Image", "https://src.hidoc.co.kr/image/lib/2021/4/28/1619598179113_0.jpg");
         image.attachTo(appRoot, "beforeend");
         const note = new NoteComponent("Note Title", "Note Body");
-        note.attachTo(appRoot, "beforeend");
+        this.page.addChild(note);
         const todo = new TodoComponent("Todo Title", "Todo Item");
-        todo.attachTo(appRoot, "beforeend");
-        const video = new VideoComponent("Video Title", "https://www.youtube.com/embed/aaQ6ZwrU7Ag");
-        video.attachTo(appRoot, "beforeend");
+        this.page.addChild(todo);
+        const video = new VideoComponent("Video Title", "https://www.youtube.com/watch?v=aaQ6ZwrU7Ag");
+        this.page.addChild(video);
     }
 }
 new App(document.querySelector(".document"));
